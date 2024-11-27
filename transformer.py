@@ -54,12 +54,12 @@ if __name__ == "__main__":
     decoder_config = {
         'batch_size': 8,
         'Wemb_dim': 768,
-        'Pemb_dim': 500,
+        'Pemb_dim': 1500,
         'num_heads': 2,
         'hidden_dim': 64,
         'mlp_dim': 128,
         'n_blocks': 12,
-        'voc_size': 5297
+        'voc_size': 50300
     }
 
     # Initialize the Transformer model

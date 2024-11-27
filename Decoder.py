@@ -36,10 +36,8 @@ class DecoderPositionalEmbedding(nn.Module):
         """
         # Generate position indices (0, 1, 2, ..., seq_len-1)
         positions = torch.arange(seq_len, device=self.positional_embedding.weight.device)
-        
         # Expand positions for the entire batch
         positions = positions.unsqueeze(0).expand(batch_size, seq_len)  # Shape: (batch_size, seq_len)
-        
         # Get positional embeddings
         pos_embeds = self.positional_embedding(positions)  # Shape: (batch_size, seq_len, positional_embedding_size)
         return pos_embeds
@@ -48,15 +46,13 @@ class DecoderPositionalEmbedding(nn.Module):
 class Decoder(torch.nn.Module):
     def __init__(self, batch_size=8, Wemb_dim = 768, Pemb_dim = 64, num_heads = 4, hidden_dim = 64, mlp_dim = 64,n_blocks =4,voc_size=53000):
         super(Decoder, self).__init__()
-
         self.batch_size = batch_size
         self.hidden_dim = hidden_dim
         self.n_blocks = n_blocks
         self.gpt2 = GPT2LMHeadModel.from_pretrained('gpt2')
-
+        self.gpt2.resize_token_embeddings(len(voc_size))
         # Positional Encoding
         self.positional_encoding = getPositionEncoding
-
         # Combined Transformer Blocks (Attention + MLP Block)
         self.transformer_blocks = torch.nn.ModuleList([
             CombinedTransformerBlock(Wemb_dim,Pemb_dim,
@@ -64,40 +60,22 @@ class Decoder(torch.nn.Module):
                                         mlp_dim, voc_size = voc_size) 
             for _ in range(n_blocks)
         ])
-
         # Final normalization layer
         self.norm = torch.nn.LayerNorm(Wemb_dim)
-
         self.positional_embedding = DecoderPositionalEmbedding(200, 768)
-
         self.project = torch.nn.Linear(Wemb_dim, voc_size)
 
 
     def forward(self, tokens,patches):
-        word_embeddings = self.gpt2.transformer.wte(tokens) 
-        
-
-        # # Add positional encodings
+        word_embeddings = self.gpt2.transformer.wte(tokens)
         batch_size, seq_len, emb_dim = word_embeddings.size()
-        # pos_emb = self.positional_encoding(seq_len, emb_dim, 10000)  # Match device
-        # pos_encoded = word_embeddings + pos_emb
-
-        #using learned postional embeddings 
         pos_emb = self.positional_embedding(seq_len, batch_size)
-
         pos_encoded = word_embeddings + pos_emb
-
-
-        # Pass through the sequence of transformer blocks
         output = pos_encoded
         for block in self.transformer_blocks:
             output = block(output,patches)
-
-        # Apply final normalization
         output = self.norm(output)
-
         output = self.project(output)
-
         return output
 
 class CombinedTransformerBlock(torch.nn.Module):
