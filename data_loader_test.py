@@ -73,7 +73,7 @@ def data_loader(data, batch_size):
         # Pad or trim audio and tokens
         max_time = int(np.ceil(max(durations)))
         processed_audio = [
-            whisper.log_mel_spectrogram(pad_or_trim_custom(audio, max_time)).numpy()
+            whisper.log_mel_spectrogram(pad_or_trim_custom(audio, 10)).numpy()
             for audio in batch_audio
         ]
         
@@ -98,10 +98,39 @@ def data_loader(data, batch_size):
             "input_ids": input_ids,
             "target_ids": target_ids
         }
-# data=pd.read_csv(r"J:\common_voice\common\cv-corpus-19.0-2024-09-13\en\train.tsv",sep='\t')
-# batch_size = 10
-# # Example usage
-# for batch in data_loader(data, batch_size):
-#     print(batch["audio"].shape)  # Shape of audio Mel spectrograms
-#     print(batch["input_ids"].shape)  # Tokenized input sequences
-#     print(batch["target_ids"].shape)  # Tokenized target sequences
+
+def plot_mel_spectrogram(mel_spectrogram, title="Mel Spectrogram"):
+    """
+    Plots a Mel spectrogram.
+
+    Args:
+        mel_spectrogram (np.ndarray): The Mel spectrogram to plot.
+        title (str): Title of the plot.
+    """
+    plt.figure(figsize=(10, 4))
+    plt.imshow(mel_spectrogram, aspect='auto', origin='lower', cmap='viridis')
+    plt.colorbar(format='%+2.0f dB')
+    plt.title(title)
+    plt.xlabel('Time')
+    plt.ylabel('Mel Frequency')
+    plt.tight_layout()
+    plt.show()
+
+if __name__ == "__main__":
+    data = pd.read_csv(r"J:\common_voice\common\cv-corpus-19.0-2024-09-13\en\train.tsv", sep='\t')
+    batch_size = 1
+
+    # Iterate over batches
+    for i, batch in enumerate(data_loader(data, batch_size)):
+        print(batch["audio"].shape)  # Shape of audio Mel spectrograms
+        print(batch["input_ids"].shape)  # Tokenized input sequences
+        print(batch["target_ids"].shape)  # Tokenized target sequences
+        
+        # Visualize the first Mel spectrogram in the batch
+        mel_spectrogram = batch["audio"][0].numpy()  # Extract the first spectrogram
+        plot_mel_spectrogram(mel_spectrogram, title=f"Mel Spectrogram - Batch {i}")
+        
+        # Stop after visualizing the first batch (optional)
+        if i == 0:
+            break
+
