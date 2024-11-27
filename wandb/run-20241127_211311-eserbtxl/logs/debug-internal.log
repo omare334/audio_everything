@@ -1,0 +1,8 @@
+{"time":"2024-11-27T21:13:11.2942096Z","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-27T21:13:11.2942096Z","level":"INFO","msg":"created symlink","path":"C:\\Users\\omare\\Desktop\\mlx projects\\audio_everything\\wandb\\run-20241127_211311-eserbtxl\\logs\\debug-core.log"}
+{"time":"2024-11-27T21:13:11.4037154Z","level":"INFO","msg":"created new stream","id":"eserbtxl"}
+{"time":"2024-11-27T21:13:11.4037154Z","level":"INFO","msg":"stream: started","id":"eserbtxl"}
+{"time":"2024-11-27T21:13:11.4037154Z","level":"INFO","msg":"writer: Do: started","stream_id":"eserbtxl"}
+{"time":"2024-11-27T21:13:11.4037154Z","level":"INFO","msg":"sender: started","stream_id":"eserbtxl"}
+{"time":"2024-11-27T21:13:11.4042216Z","level":"INFO","msg":"handler: started","stream_id":"eserbtxl"}
+{"time":"2024-11-27T21:13:11.9589215Z","level":"INFO","msg":"Starting system monitor"}

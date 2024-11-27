@@ -1,0 +1,14 @@
+c:\Users\omare\Desktop\mlx projects\audio_everything\training.py:101: DtypeWarning: Columns (4) have mixed types. Specify dtype option on import or set low_memory=False.
+  data = pd.read_csv(r"J:\common_voice\common\cv-corpus-19.0-2024-09-13\en\train.tsv", sep='\t')
+Epoch 1/5:   0%|                                                              | 0/3 [00:00<?, ?it/s]c:\Users\omare\AppData\Local\Programs\Python\Python312\Lib\site-packages\transformers\tokenization_utils_base.py:2852: UserWarning: `max_length` is ignored when `padding`=`True` and there is no truncation strategy. To pad to max length, use `padding='max_length'`.
+  warnings.warn(
+Epoch 1/5: 4it [00:08,  2.07s/it, loss=10.5]                                                        
+Epoch 1/5, Loss: 42.7282
+Epoch 2/5:   0%|                                                              | 0/3 [00:00<?, ?it/s]
+Epoch 2/5, Loss: 0.0000
+Epoch 3/5:   0%|                                                              | 0/3 [00:00<?, ?it/s]
+Epoch 3/5, Loss: 0.0000
+Epoch 4/5:   0%|                                                              | 0/3 [00:00<?, ?it/s]
+Epoch 4/5, Loss: 0.0000
+Epoch 5/5:   0%|                                                              | 0/3 [00:00<?, ?it/s]
+Epoch 5/5, Loss: 0.0000

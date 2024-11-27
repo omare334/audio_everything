@@ -1,0 +1,27 @@
+c:\Users\omare\Desktop\mlx projects\audio_everything\training.py:52: DtypeWarning: Columns (4) have mixed types. Specify dtype option on import or set low_memory=False.
+  data = pd.read_csv(data_path, sep='\t')
+Epoch 1/10:   0%|                                                                                                           | 0/2 [00:00<?, ?batch/s]c:\Users\omare\AppData\Local\Programs\Python\Python312\Lib\site-packages\transformers\tokenization_utils_base.py:2852: UserWarning: `max_length` is ignored when `padding`=`True` and there is no truncation strategy. To pad to max length, use `padding='max_length'`.
+  warnings.warn(
+Epoch 1/10: 100%|████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:05<00:00,  2.78s/batch, loss=10.8]
+Backend tkagg is interactive backend. Turning interactive mode on.
+Epoch 1 Loss: 10.847073078155518
+Epoch 2/10:   0%|                                                                                                           | 0/2 [00:00<?, ?batch/s]c:\Users\omare\AppData\Local\Programs\Python\Python312\Lib\site-packages\transformers\tokenization_utils_base.py:2852: UserWarning: `max_length` is ignored when `padding`=`True` and there is no truncation strategy. To pad to max length, use `padding='max_length'`.
+  warnings.warn(
+Epoch 2/10: 100%|████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:04<00:00,  2.12s/batch, loss=10.4]
+Epoch 2 Loss: 10.444092750549316
+Epoch 3/10: 100%|████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:04<00:00,  2.18s/batch, loss=10.1]
+Epoch 3 Loss: 10.080692291259766
+Epoch 4/10: 100%|████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:04<00:00,  2.13s/batch, loss=9.73]
+Epoch 4 Loss: 9.74548625946045
+Epoch 5/10: 100%|████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:04<00:00,  2.12s/batch, loss=9.42]
+Epoch 5 Loss: 9.428598403930664
+Epoch 6/10: 100%|████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:04<00:00,  2.14s/batch, loss=9.12]
+Epoch 6 Loss: 9.122225761413574
+Epoch 7/10: 100%|████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:04<00:00,  2.12s/batch, loss=8.82]
+Epoch 7 Loss: 8.82224702835083
+Epoch 8/10: 100%|████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:04<00:00,  2.14s/batch, loss=8.53]
+Epoch 8 Loss: 8.528150081634521
+Epoch 9/10: 100%|████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:04<00:00,  2.11s/batch, loss=8.25]
+Epoch 9 Loss: 8.24070930480957
+Epoch 10/10: 100%|███████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:04<00:00,  2.14s/batch, loss=7.97]
+Epoch 10 Loss: 7.960651159286499

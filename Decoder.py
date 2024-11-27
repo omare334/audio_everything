@@ -50,7 +50,7 @@ class Decoder(torch.nn.Module):
         self.hidden_dim = hidden_dim
         self.n_blocks = n_blocks
         self.gpt2 = GPT2LMHeadModel.from_pretrained('gpt2')
-        self.gpt2.resize_token_embeddings(len(voc_size))
+        self.gpt2.resize_token_embeddings(voc_size)
         # Positional Encoding
         self.positional_encoding = getPositionEncoding
         # Combined Transformer Blocks (Attention + MLP Block)
@@ -124,16 +124,16 @@ class CrossAttention(torch.nn.Module):
         Pseq_len = pemb.size(1)
         
      
-        print("The Pemb shape:", pemb.shape) 
+        # print("The Pemb shape:", pemb.shape) 
 
         # Transform embeddings for query, key, and value
         query = self.linear_q(wemb).view(batch_size, Wseq_len, self.num_heads, self.Whead_dim).transpose(1, 2)
         key = self.linear_k(pemb).view(batch_size, Pseq_len, self.num_heads, self.Phead_dim).transpose(1, 2)
         value = self.linear_v(pemb).view(batch_size, Pseq_len, self.num_heads, self.Phead_dim).transpose(1, 2)
 
-        print("Query shape after linear transformation:", query.shape)
-        print("Key shape after linear transformation:", key.shape)
-        print("Value shape after linear transformation:", value.shape)
+        # print("Query shape after linear transformation:", query.shape)
+        # print("Key shape after linear transformation:", key.shape)
+        # print("Value shape after linear transformation:", value.shape)
 
         # Attention computation: query * key^T
         scaling_factor = self.Whead_dim ** 0.5  # or use self.Phead_dim if necessary
@@ -158,39 +158,39 @@ class CrossAttention(torch.nn.Module):
     
     import torch
 
-if __name__ == "__main__":
-    # Define hyperparameters
-    batch_size = 8
-    seq_len = 32  # Sequence length for tokens
-    patch_seq_len = 16  # Sequence length for patches
-    Wemb_dim = 768
-    Pemb_dim = 64
-    voc_size = 5297
+# if __name__ == "__main__":
+#     # Define hyperparameters
+#     batch_size = 8
+#     seq_len = 32  # Sequence length for tokens
+#     patch_seq_len = 16  # Sequence length for patches
+#     Wemb_dim = 768
+#     Pemb_dim = 64
+#     voc_size = 5297
 
-    # Initialize the Decoder model
-    model = Decoder(
-        batch_size=batch_size,
-        Wemb_dim=Wemb_dim,
-        Pemb_dim=Pemb_dim,
-        num_heads=4,
-        hidden_dim=64,
-        mlp_dim=128,  # Adjust as necessary
-        n_blocks=4,
-        voc_size=voc_size,
-    )
+#     # Initialize the Decoder model
+#     model = Decoder(
+#         batch_size=batch_size,
+#         Wemb_dim=Wemb_dim,
+#         Pemb_dim=Pemb_dim,
+#         num_heads=4,
+#         hidden_dim=64,
+#         mlp_dim=128,  # Adjust as necessary
+#         n_blocks=4,
+#         voc_size=voc_size,
+#     )
 
-    # Generate random token inputs (e.g., vocabulary indices)
-    tokens = torch.randint(0, voc_size, (batch_size, seq_len))
-    # Generate random patch inputs (e.g., patch embeddings)
-    patches = torch.randn(batch_size, patch_seq_len, Pemb_dim)
+#     # Generate random token inputs (e.g., vocabulary indices)
+#     tokens = torch.randint(0, voc_size, (batch_size, seq_len))
+#     # Generate random patch inputs (e.g., patch embeddings)
+#     patches = torch.randn(batch_size, patch_seq_len, Pemb_dim)
 
-    # Move model and inputs to GPU if available
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    model.to(device)
-    tokens = tokens.to(device)
-    patches = patches.to(device)
+#     # Move model and inputs to GPU if available
+#     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+#     model.to(device)
+#     tokens = tokens.to(device)
+#     patches = patches.to(device)
 
-    # Forward pass
+#     # Forward pass
 
-    output = model(tokens, patches)
-    print("Model output shape:", output.shape)
+#     output = model(tokens, patches)
+#     print("Model output shape:", output.shape)

@@ -1,0 +1,3 @@
+c:\Users\omare\Desktop\mlx projects\audio_everything\training.py:103: DtypeWarning: Columns (4) have mixed types. Specify dtype option on import or set low_memory=False.
+  data = pd.read_csv(r"J:\common_voice\common\cv-corpus-19.0-2024-09-13\en\train.tsv", sep='\t')
+Backend tkagg is interactive backend. Turning interactive mode on.

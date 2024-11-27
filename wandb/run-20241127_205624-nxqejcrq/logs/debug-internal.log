@@ -1,0 +1,17 @@
+{"time":"2024-11-27T20:56:24.2310277Z","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-27T20:56:24.2310277Z","level":"INFO","msg":"created symlink","path":"C:\\Users\\omare\\Desktop\\mlx projects\\audio_everything\\wandb\\run-20241127_205624-nxqejcrq\\logs\\debug-core.log"}
+{"time":"2024-11-27T20:56:24.3396062Z","level":"INFO","msg":"created new stream","id":"nxqejcrq"}
+{"time":"2024-11-27T20:56:24.3396062Z","level":"INFO","msg":"stream: started","id":"nxqejcrq"}
+{"time":"2024-11-27T20:56:24.3396062Z","level":"INFO","msg":"handler: started","stream_id":"nxqejcrq"}
+{"time":"2024-11-27T20:56:24.3396062Z","level":"INFO","msg":"sender: started","stream_id":"nxqejcrq"}
+{"time":"2024-11-27T20:56:24.3396062Z","level":"INFO","msg":"writer: Do: started","stream_id":"nxqejcrq"}
+{"time":"2024-11-27T20:56:24.6630957Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-27T20:56:37.9134073Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-27T20:56:37.913913Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-27T20:56:38.6173865Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-27T20:56:38.8127002Z","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2024-11-27T20:56:39.8372749Z","level":"INFO","msg":"stream: closing","id":"nxqejcrq"}
+{"time":"2024-11-27T20:56:39.8372749Z","level":"INFO","msg":"handler: closed","stream_id":"nxqejcrq"}
+{"time":"2024-11-27T20:56:39.8372749Z","level":"INFO","msg":"writer: Close: closed","stream_id":"nxqejcrq"}
+{"time":"2024-11-27T20:56:39.8372749Z","level":"INFO","msg":"sender: closed","stream_id":"nxqejcrq"}
+{"time":"2024-11-27T20:56:39.8372749Z","level":"INFO","msg":"stream: closed","id":"nxqejcrq"}

@@ -1,0 +1,24 @@
+c:\Users\omare\Desktop\mlx projects\audio_everything\training.py:52: DtypeWarning: Columns (4) have mixed types. Specify dtype option on import or set low_memory=False.
+  data = pd.read_csv(data_path, sep='\t')
+Epoch 1/10:   0%|                                                                                                           | 0/1 [00:00<?, ?batch/s]c:\Users\omare\AppData\Local\Programs\Python\Python312\Lib\site-packages\transformers\tokenization_utils_base.py:2852: UserWarning: `max_length` is ignored when `padding`=`True` and there is no truncation strategy. To pad to max length, use `padding='max_length'`.
+  warnings.warn(
+Epoch 1/10: 2batch [00:04,  2.43s/batch, loss=10.8]                                                                                                  
+Epoch 1 Loss: 21.767451286315918
+Epoch 2/10: 2batch [00:03,  1.82s/batch, loss=10.4]                                                                                                  
+Epoch 2 Loss: 20.990541458129883
+Epoch 3/10: 2batch [00:03,  1.82s/batch, loss=10.1]                                                                                                  
+Epoch 3 Loss: 20.289298057556152
+Epoch 4/10: 2batch [00:03,  1.81s/batch, loss=9.78]                                                                                                  
+Epoch 4 Loss: 19.633708953857422
+Epoch 5/10: 2batch [00:03,  1.81s/batch, loss=9.47]                                                                                                  
+Epoch 5 Loss: 19.005749702453613
+Epoch 6/10: 2batch [00:03,  1.78s/batch, loss=9.16]                                                                                                  
+Epoch 6 Loss: 18.395179748535156
+Epoch 7/10: 2batch [00:03,  1.80s/batch, loss=8.86]                                                                                                  
+Epoch 7 Loss: 17.796918869018555
+Epoch 8/10: 2batch [00:03,  1.79s/batch, loss=8.57]                                                                                                  
+Epoch 8 Loss: 17.20828151702881
+Epoch 9/10: 2batch [00:03,  1.95s/batch, loss=8.28]                                                                                                  
+Epoch 9 Loss: 16.628018379211426
+Epoch 10/10: 2batch [00:04,  2.07s/batch, loss=8]                                                                                                    
+Epoch 10 Loss: 16.057058811187744
