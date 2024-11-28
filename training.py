@@ -13,19 +13,19 @@ encoder_config = {
     'batch_size': 64,
     'n_mel_bins': 80,
     'n_time_frames': 800 ,
-    'n_attention_heads': 4,
+    'n_attention_heads': 8,
     'hidden_dim': 64,
-    'n_blocks': 8
+    'n_blocks': 16
     }
 
 decoder_config = {
     'batch_size': 64,
     'Wemb_dim': 768,
     'Pemb_dim': 400,  # Dynamically adjusted during training
-    'num_heads': 4,
+    'num_heads': 8,
     'hidden_dim': 64,
     'mlp_dim': 128,
-    'n_blocks': 8,
+    'n_blocks': 16,
     'voc_size': 50264  # Vocabulary size from tokenizer
 }
 
