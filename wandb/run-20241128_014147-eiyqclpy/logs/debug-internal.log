@@ -1,0 +1,8 @@
+{"time":"2024-11-28T01:41:47.9034033Z","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-28T01:41:47.9034033Z","level":"INFO","msg":"created symlink","path":"C:\\Users\\omare\\Desktop\\mlx projects\\audio_everything\\wandb\\run-20241128_014147-eiyqclpy\\logs\\debug-core.log"}
+{"time":"2024-11-28T01:41:48.0132256Z","level":"INFO","msg":"created new stream","id":"eiyqclpy"}
+{"time":"2024-11-28T01:41:48.0132256Z","level":"INFO","msg":"stream: started","id":"eiyqclpy"}
+{"time":"2024-11-28T01:41:48.0132256Z","level":"INFO","msg":"sender: started","stream_id":"eiyqclpy"}
+{"time":"2024-11-28T01:41:48.0132256Z","level":"INFO","msg":"writer: Do: started","stream_id":"eiyqclpy"}
+{"time":"2024-11-28T01:41:48.0132256Z","level":"INFO","msg":"handler: started","stream_id":"eiyqclpy"}
+{"time":"2024-11-28T01:41:48.2980701Z","level":"INFO","msg":"Starting system monitor"}

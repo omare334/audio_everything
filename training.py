@@ -12,6 +12,7 @@ import wandb
 encoder_config = {
     'batch_size': 64,
     'n_mel_bins': 80,
+    'emb_dim':256,
     'n_time_frames': 800 ,
     'n_attention_heads': 4,
     'hidden_dim': 64,
@@ -21,7 +22,7 @@ encoder_config = {
 decoder_config = {
     'batch_size': 64,
     'Wemb_dim': 768,
-    'Pemb_dim': 400,  # Dynamically adjusted during training
+    'Pemb_dim': 256,  # Dynamically adjusted during training
     'num_heads': 4,
     'hidden_dim': 64,
     'mlp_dim': 128,
@@ -49,8 +50,9 @@ wandb.init(project="audio-to-text-transformer")
 num_epochs = 10
 
 # Load your training data
-data_path = r"J:\common_voice\common\cv-corpus-19.0-2024-09-13\en\train.tsv"
-data = pd.read_csv(data_path, sep='\t')
+data_path = "training_concatenated.csv"
+# r"J:\common_voice\common\cv-corpus-19.0-2024-09-13\en\train.tsv"
+data = pd.read_csv(data_path)
 
 # Create the data loader
 batch_size = encoder_config["batch_size"]

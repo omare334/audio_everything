@@ -57,7 +57,7 @@ def data_loader(data, batch_size):
             batch_audio.append(audio)
             
             # Determine the task token
-            task_token = "<transcribe>" if row["locale"] in ["en"] else "<translate>"
+            task_token = "<translate>" if row["locale"] in ["en"] else "<translate>"
             
             # Build the structured input
             input_text = f"<start>{row['locale']}{task_token} {row['sentence']}"
@@ -116,19 +116,38 @@ def plot_mel_spectrogram(mel_spectrogram, title="Mel Spectrogram"):
     plt.tight_layout()
     plt.show()
 
+# if __name__ == "__main__":
+#     data = pd.read_csv(r"J:\common_voice\common\cv-corpus-19.0-2024-09-13\en\train.tsv", sep='\t')
+#     batch_size = 5
+
+#     # Iterate over batches
+#     for i, batch in enumerate(data_loader(data, batch_size)):
+#         print(batch["audio"].shape)  # Shape of audio Mel spectrograms
+#         print(batch["input_ids"].shape)  # Tokenized input sequences
+#         print(batch["target_ids"].shape)  # Tokenized target sequences
+        
+#         # Visualize the first Mel spectrogram in the batch
+#         mel_spectrogram = batch["audio"][2].numpy()  # Extract the first spectrogram
+#         plot_mel_spectrogram(mel_spectrogram, title=f"Mel Spectrogram - Batch {i}")
+        
+from tqdm import tqdm
+
 if __name__ == "__main__":
     data = pd.read_csv(r"J:\common_voice\common\cv-corpus-19.0-2024-09-13\en\train.tsv", sep='\t')
     batch_size = 5
 
-    # Iterate over batches
-    for i, batch in enumerate(data_loader(data, batch_size)):
-        print(batch["audio"].shape)  # Shape of audio Mel spectrograms
-        print(batch["input_ids"].shape)  # Tokenized input sequences
-        print(batch["target_ids"].shape)  # Tokenized target sequences
-        
-        # Visualize the first Mel spectrogram in the batch
-        mel_spectrogram = batch["audio"][2].numpy()  # Extract the first spectrogram
-        plot_mel_spectrogram(mel_spectrogram, title=f"Mel Spectrogram - Batch {i}")
-        
+    # Total number of batches
+    total_batches = len(data) // batch_size + (1 if len(data) % batch_size != 0 else 0)
+
+    # Iterate over batches with tqdm progress bar
+    for i, batch in enumerate(tqdm(data_loader(data, batch_size), total=total_batches, desc="Processing Batches")):
+        if i == 1278:  # Check if the current batch index is 1278
+            print(f"Batch Index: {i}")
+            print(f"Audio Shape: {batch['audio'].shape}")  # Shape of audio Mel spectrograms
+            print(f"Input IDs Shape: {batch['input_ids'].shape}")  # Shape of tokenized input sequences
+            print(f"Target IDs Shape: {batch['target_ids'].shape}")  # Shape of tokenized target sequences
+            break  # Stop iteration after checking batch 1278
+
+
     
 

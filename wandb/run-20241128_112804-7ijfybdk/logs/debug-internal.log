@@ -1,0 +1,17 @@
+{"time":"2024-11-28T11:28:04.2739272Z","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-28T11:28:04.2744534Z","level":"INFO","msg":"created symlink","path":"C:\\Users\\omare\\Desktop\\mlx projects\\audio_everything\\wandb\\run-20241128_112804-7ijfybdk\\logs\\debug-core.log"}
+{"time":"2024-11-28T11:28:04.3828041Z","level":"INFO","msg":"created new stream","id":"7ijfybdk"}
+{"time":"2024-11-28T11:28:04.3838077Z","level":"INFO","msg":"handler: started","stream_id":"7ijfybdk"}
+{"time":"2024-11-28T11:28:04.3838077Z","level":"INFO","msg":"stream: started","id":"7ijfybdk"}
+{"time":"2024-11-28T11:28:04.3838077Z","level":"INFO","msg":"writer: Do: started","stream_id":"7ijfybdk"}
+{"time":"2024-11-28T11:28:04.3838077Z","level":"INFO","msg":"sender: started","stream_id":"7ijfybdk"}
+{"time":"2024-11-28T11:28:04.8235167Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-28T11:38:33.5924914Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-28T11:38:33.5924914Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-28T11:38:34.5940053Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.7305882,"subtasks":[{"desc":"requirements.frozen.txt","runtime_seconds":0.0680911,"progress":"1.9KB/1.9KB"},{"desc":"wandb-job.json","runtime_seconds":0.0680911,"progress":"558B/558B"}]}],"total_operations":1}}
+{"time":"2024-11-28T11:38:36.2106908Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-28T11:38:37.3726171Z","level":"INFO","msg":"stream: closing","id":"7ijfybdk"}
+{"time":"2024-11-28T11:38:37.3726171Z","level":"INFO","msg":"handler: closed","stream_id":"7ijfybdk"}
+{"time":"2024-11-28T11:38:37.3726171Z","level":"INFO","msg":"writer: Close: closed","stream_id":"7ijfybdk"}
+{"time":"2024-11-28T11:38:37.3726171Z","level":"INFO","msg":"sender: closed","stream_id":"7ijfybdk"}
+{"time":"2024-11-28T11:38:37.3726171Z","level":"INFO","msg":"stream: closed","id":"7ijfybdk"}

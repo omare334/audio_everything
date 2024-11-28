@@ -1,0 +1,17 @@
+{"time":"2024-11-28T09:58:32.5540998Z","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-28T09:58:32.5540998Z","level":"INFO","msg":"created symlink","path":"C:\\Users\\omare\\Desktop\\mlx projects\\audio_everything\\wandb\\run-20241128_095832-nqqja6kk\\logs\\debug-core.log"}
+{"time":"2024-11-28T09:58:32.6625625Z","level":"INFO","msg":"created new stream","id":"nqqja6kk"}
+{"time":"2024-11-28T09:58:32.6625625Z","level":"INFO","msg":"stream: started","id":"nqqja6kk"}
+{"time":"2024-11-28T09:58:32.6625625Z","level":"INFO","msg":"sender: started","stream_id":"nqqja6kk"}
+{"time":"2024-11-28T09:58:32.6625625Z","level":"INFO","msg":"writer: Do: started","stream_id":"nqqja6kk"}
+{"time":"2024-11-28T09:58:32.6625625Z","level":"INFO","msg":"handler: started","stream_id":"nqqja6kk"}
+{"time":"2024-11-28T09:58:32.8779403Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-28T10:49:50.6066265Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-28T10:49:50.6071401Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-28T10:49:51.6163276Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading config.yaml","runtime_seconds":0.5705178,"progress":"652B/652B"}],"total_operations":1}}
+{"time":"2024-11-28T10:49:51.6378335Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-28T10:49:52.8313825Z","level":"INFO","msg":"stream: closing","id":"nqqja6kk"}
+{"time":"2024-11-28T10:49:52.8313825Z","level":"INFO","msg":"handler: closed","stream_id":"nqqja6kk"}
+{"time":"2024-11-28T10:49:52.8313825Z","level":"INFO","msg":"writer: Close: closed","stream_id":"nqqja6kk"}
+{"time":"2024-11-28T10:49:52.8313825Z","level":"INFO","msg":"sender: closed","stream_id":"nqqja6kk"}
+{"time":"2024-11-28T10:49:52.8313825Z","level":"INFO","msg":"stream: closed","id":"nqqja6kk"}

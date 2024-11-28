@@ -21,35 +21,34 @@ def sinusoids(length, channels, max_timescale=10000):
     return torch.cat([torch.sin(scaled_time), torch.cos(scaled_time)], dim=1)
 
 class Encoder(torch.nn.Module):
-    def __init__(self, batch_size=8, n_mel_bins=80, n_time_frames=1000, n_attention_heads=4, hidden_dim=64, n_blocks=4):
+    def __init__(self, batch_size=8, n_mel_bins=80, emb_dim = 256, n_time_frames=1000, n_attention_heads=4, hidden_dim=64, n_blocks=4):
         super(Encoder, self).__init__()
 
         self.batch_size = batch_size
         self.n_mel_bins = n_mel_bins
-        self.n_time_frames = n_time_frames
-        self.n_attention_dim = n_time_frames // 2  # Attention dimension is half of the time frames
+        self.n_time_frames = n_time_frames  # Attention dimension is half of the time frames
         self.hidden_dim = hidden_dim
         self.n_blocks = n_blocks
 
         # Conv1D layer to process the mel spectrogram input
-        self.conv_layer = conv1d(channels=n_mel_bins, kernel_size=3, padding=1)
+        self.conv_layer = conv1d(mel_bins=n_mel_bins,emb_dim=emb_dim, kernel_size=3, padding=1)
 
         # Positional Encoding
         self.positional_encoding = getPositionEncoding
 
         # Combined Transformer Blocks (Attention + MLP Block)
         self.transformer_blocks = torch.nn.ModuleList([
-            CombinedTransformerBlock(emb_dim=self.n_attention_dim, 
+            CombinedTransformerBlock(emb_dim=emb_dim, 
 
 
                                      num_heads=n_attention_heads, 
                                      hidden_dim=hidden_dim, 
-                                     mlp_dim=self.n_attention_dim) 
+                                     mlp_dim=emb_dim) 
             for _ in range(n_blocks)
         ])
 
         # Final normalization layer
-        self.norm = torch.nn.LayerNorm(self.n_attention_dim)
+        self.norm = torch.nn.LayerNorm(emb_dim)
 
     def forward(self, mel_spectrogram):
         # Conv1D expects input as (batch_size, channels, seq_len), so we permute the input
@@ -73,20 +72,20 @@ class Encoder(torch.nn.Module):
 
 
 class conv1d(torch.nn.Module):
-    def __init__(self, channels: int, kernel_size: int = 3, padding: int = 1):
+    def __init__(self, mel_bins: int, emb_dim : int, kernel_size: int = 3, padding: int = 1):
         super(conv1d, self).__init__()
-        self.norm1 = torch.nn.LayerNorm(channels)  # Normalization before the first convolution
+        self.norm1 = torch.nn.LayerNorm(mel_bins)  # Normalization before the first convolution
         self.activation = torch.nn.GELU()         # Non-linearity
         self.conv1 = torch.nn.Conv1d(
-            in_channels=channels, 
-            out_channels=channels, 
+            in_channels=mel_bins, 
+            out_channels=emb_dim, 
             kernel_size=kernel_size,  
             padding=padding
         )
-        self.norm2 = torch.nn.LayerNorm(channels)  # Normalization before the second convolution
+        self.norm2 = torch.nn.LayerNorm(emb_dim)  # Normalization before the second convolution
         self.conv2 = torch.nn.Conv1d(
-            in_channels=channels, 
-            out_channels=channels, 
+            in_channels=emb_dim, 
+            out_channels=emb_dim, 
             kernel_size=kernel_size, 
             stride= 2, 
             padding=padding
@@ -98,7 +97,7 @@ class conv1d(torch.nn.Module):
         """
         x = F.gelu(self.conv1(x))
         x = F.gelu(self.conv2(x))
-        # x = x.permute(0, 2, 1)
+        x = x.permute(0, 2, 1)
         return x
 
 class CombinedTransformerBlock(torch.nn.Module):
@@ -108,7 +107,7 @@ class CombinedTransformerBlock(torch.nn.Module):
         self.mlp_block = PreActivationResidualMLPBlock(hidden_dim, mlp_dim)
 
     def forward(self, x, mask=None):
-        x = self.attention(x, mask)
+        x = self.attention(x, None)
         x = self.mlp_block(x)
         return x
 
@@ -147,7 +146,7 @@ class MaskedAttention(torch.nn.Module):
 
         # Calculate attention scores and apply softmax
         scaling_factor = self.head_dim ** 0.5
-        similarity_matrix = torch.matmul(query, key.transpose(-2, -1)) / scaling_factor
+        similarity_matrix = (query @ key.transpose(-2, -1)) / scaling_factor
 
         if mask is not None:
             mask = torch.triu(torch.ones_like(similarity_matrix), diagonal=1) * -1e9

@@ -1,0 +1,6 @@
+c:\Users\omare\Desktop\mlx projects\audio_everything\training.py:54: DtypeWarning: Columns (5) have mixed types. Specify dtype option on import or set low_memory=False.
+  data = pd.read_csv(data_path)
+Epoch 1/10:   0%|                                                                                       | 0/17440 [00:00<?, ?batch/s]C:\Users\omare\AppData\Local\Programs\Python\Python312\Lib\site-packages\transformers\tokenization_utils_base.py:2852: UserWarning: `max_length` is ignored when `padding`=`True` and there is no truncation strategy. To pad to max length, use `padding='max_length'`.
+  warnings.warn(
+Epoch 1/10:  48%|█████████████████████████████▏                               | 8354/17440 [3:15:48<3:32:57,  1.41s/batch, loss=4.57]
+Training interrupted. Saving model...

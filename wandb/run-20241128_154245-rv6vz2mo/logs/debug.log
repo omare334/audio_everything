@@ -1,0 +1,21 @@
+2024-11-28 15:42:45,046 INFO    MainThread:34364 [wandb_setup.py:_flush():79] Current SDK version is 0.18.7
+2024-11-28 15:42:45,046 INFO    MainThread:34364 [wandb_setup.py:_flush():79] Configure stats pid to 34364
+2024-11-28 15:42:45,046 INFO    MainThread:34364 [wandb_setup.py:_flush():79] Loading settings from C:\Users\omare\.config\wandb\settings
+2024-11-28 15:42:45,047 INFO    MainThread:34364 [wandb_setup.py:_flush():79] Loading settings from C:\Users\omare\Desktop\mlx projects\audio_everything\wandb\settings
+2024-11-28 15:42:45,047 INFO    MainThread:34364 [wandb_setup.py:_flush():79] Loading settings from environment variables: {}
+2024-11-28 15:42:45,047 INFO    MainThread:34364 [wandb_setup.py:_flush():79] Applying setup settings: {'mode': None, '_disable_service': None}
+2024-11-28 15:42:45,049 INFO    MainThread:34364 [wandb_setup.py:_flush():79] Inferring run settings from compute environment: {'program_relpath': 'training.py', 'program_abspath': 'c:\\Users\\omare\\Desktop\\mlx projects\\audio_everything\\training.py', 'program': 'c:\\Users\\omare\\Desktop\\mlx projects\\audio_everything\\training.py'}
+2024-11-28 15:42:45,049 INFO    MainThread:34364 [wandb_setup.py:_flush():79] Applying login settings: {}
+2024-11-28 15:42:45,049 INFO    MainThread:34364 [wandb_init.py:_log_setup():533] Logging user logs to C:\Users\omare\Desktop\mlx projects\audio_everything\wandb\run-20241128_154245-rv6vz2mo\logs\debug.log
+2024-11-28 15:42:45,050 INFO    MainThread:34364 [wandb_init.py:_log_setup():534] Logging internal logs to C:\Users\omare\Desktop\mlx projects\audio_everything\wandb\run-20241128_154245-rv6vz2mo\logs\debug-internal.log
+2024-11-28 15:42:45,050 INFO    MainThread:34364 [wandb_init.py:init():619] calling init triggers
+2024-11-28 15:42:45,050 INFO    MainThread:34364 [wandb_init.py:init():626] wandb.init called with sweep_config: {}
+config: {}
+2024-11-28 15:42:45,050 INFO    MainThread:34364 [wandb_init.py:init():664] wandb.init() called when a run is still active
+2024-11-28 18:58:35,321 INFO    MainThread:34364 [wandb_run.py:_finish():2155] finishing run omareweis123/audio-to-text-transformer/ebir6prn
+2024-11-28 18:58:35,324 INFO    MainThread:34364 [wandb_run.py:_atexit_cleanup():2420] got exitcode: 0
+2024-11-28 18:58:35,325 INFO    MainThread:34364 [wandb_run.py:_restore():2402] restore
+2024-11-28 18:58:35,326 INFO    MainThread:34364 [wandb_run.py:_restore():2408] restore done
+2024-11-28 18:58:37,259 INFO    MainThread:34364 [wandb_run.py:_footer_history_summary_info():3960] rendering history
+2024-11-28 18:58:37,262 INFO    MainThread:34364 [wandb_run.py:_footer_history_summary_info():3992] rendering summary
+2024-11-28 18:58:37,290 INFO    MainThread:34364 [wandb_run.py:_footer_sync_info():3921] logging synced files

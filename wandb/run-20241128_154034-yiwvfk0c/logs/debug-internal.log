@@ -1,0 +1,17 @@
+{"time":"2024-11-28T15:40:34.6675124Z","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-28T15:40:34.6680327Z","level":"INFO","msg":"created symlink","path":"C:\\Users\\omare\\Desktop\\mlx projects\\audio_everything\\wandb\\run-20241128_154034-yiwvfk0c\\logs\\debug-core.log"}
+{"time":"2024-11-28T15:40:34.7773636Z","level":"INFO","msg":"created new stream","id":"yiwvfk0c"}
+{"time":"2024-11-28T15:40:34.7778837Z","level":"INFO","msg":"stream: started","id":"yiwvfk0c"}
+{"time":"2024-11-28T15:40:34.7778837Z","level":"INFO","msg":"handler: started","stream_id":"yiwvfk0c"}
+{"time":"2024-11-28T15:40:34.7778837Z","level":"INFO","msg":"sender: started","stream_id":"yiwvfk0c"}
+{"time":"2024-11-28T15:40:34.7778837Z","level":"INFO","msg":"writer: Do: started","stream_id":"yiwvfk0c"}
+{"time":"2024-11-28T15:40:35.105389Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-28T15:41:33.4199808Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-28T15:41:33.4204852Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-28T15:41:34.4205381Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.8624065,"subtasks":[{"desc":"wandb-job.json","runtime_seconds":0.1624421,"progress":"588B/588B"}]}],"total_operations":1}}
+{"time":"2024-11-28T15:41:35.7085566Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-28T15:41:36.8797899Z","level":"INFO","msg":"stream: closing","id":"yiwvfk0c"}
+{"time":"2024-11-28T15:41:36.8797899Z","level":"INFO","msg":"handler: closed","stream_id":"yiwvfk0c"}
+{"time":"2024-11-28T15:41:36.8797899Z","level":"INFO","msg":"sender: closed","stream_id":"yiwvfk0c"}
+{"time":"2024-11-28T15:41:36.8797899Z","level":"INFO","msg":"writer: Close: closed","stream_id":"yiwvfk0c"}
+{"time":"2024-11-28T15:41:36.8797899Z","level":"INFO","msg":"stream: closed","id":"yiwvfk0c"}

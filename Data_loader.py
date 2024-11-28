@@ -28,6 +28,39 @@ def pad_or_trim_custom(audio, max_time=5,sr = 16000):
     else:
         # Audio is already the correct length
         return audio
+# Initialize the tokenizer
+tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
+
+# Add special tokens
+special_tokens = ["<pad>", "<start>", "<end>", "<transcribe>", "<translate>", "<en>", "<ar>"]
+tokenizer.add_tokens(special_tokens)
+
+# Set the special tokens
+tokenizer.pad_token = "<pad>"
+base_dir = r"J:\common_voice\common\cv-corpus-19.0-2024-09-13\en\clips"
+
+def pad_or_trim_custom(audio, max_time=5,sr = 16000):
+    """
+    Pads or trims the audio to the specified target length.
+    
+    Args:
+        audio (np.ndarray): Input audio array.
+        target_length (int): Desired length in samples (default is 80,000 for 5 seconds at 16kHz).
+        
+    Returns:
+        np.ndarray: Audio array of length `target_length`.
+    """
+    target_length = max_time * 16000
+    if len(audio) > target_length:
+        # Trim the audio to the target length
+        return audio[:target_length]
+    elif len(audio) < target_length:
+        # Pad with zeros at the end to match the target length
+        padding = target_length - len(audio)
+        return np.pad(audio, (0, padding), mode='constant')
+    else:
+        # Audio is already the correct length
+        return audio
 
 base_dir = r"J:\common_voice\common\cv-corpus-19.0-2024-09-13\en\clips"
 

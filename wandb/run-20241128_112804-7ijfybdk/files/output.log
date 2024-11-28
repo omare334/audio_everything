@@ -1,0 +1,6 @@
+c:\Users\omare\Desktop\mlx projects\audio_everything\training.py:53: DtypeWarning: Columns (4) have mixed types. Specify dtype option on import or set low_memory=False.
+  data = pd.read_csv(data_path, sep='\t')
+Epoch 1/10:   0%|                                                                                       | 0/17441 [00:00<?, ?batch/s]C:\Users\omare\AppData\Local\Programs\Python\Python312\Lib\site-packages\transformers\tokenization_utils_base.py:2852: UserWarning: `max_length` is ignored when `padding`=`True` and there is no truncation strategy. To pad to max length, use `padding='max_length'`.
+  warnings.warn(
+Epoch 1/10:   7%|████▌                                                          | 1278/17441 [10:24<2:06:54,  2.12batch/s, loss=5.23]Token indices sequence length is longer than the specified maximum sequence length for this model (1924 > 1024). Running this sequence through the model will result in indexing errors
+Epoch 1/10:   7%|████▌                                                          | 1278/17441 [10:24<2:11:44,  2.04batch/s, loss=5.23]
