@@ -73,7 +73,7 @@ def data_loader(data, batch_size):
         # Pad or trim audio and tokens
         max_time = int(np.ceil(max(durations)))
         processed_audio = [
-            whisper.log_mel_spectrogram(pad_or_trim_custom(audio, 10)).numpy()
+            whisper.log_mel_spectrogram(pad_or_trim_custom(audio, 8)).numpy()
             for audio in batch_audio
         ]
         
@@ -118,7 +118,7 @@ def plot_mel_spectrogram(mel_spectrogram, title="Mel Spectrogram"):
 
 if __name__ == "__main__":
     data = pd.read_csv(r"J:\common_voice\common\cv-corpus-19.0-2024-09-13\en\train.tsv", sep='\t')
-    batch_size = 1
+    batch_size = 5
 
     # Iterate over batches
     for i, batch in enumerate(data_loader(data, batch_size)):
@@ -127,10 +127,8 @@ if __name__ == "__main__":
         print(batch["target_ids"].shape)  # Tokenized target sequences
         
         # Visualize the first Mel spectrogram in the batch
-        mel_spectrogram = batch["audio"][0].numpy()  # Extract the first spectrogram
+        mel_spectrogram = batch["audio"][2].numpy()  # Extract the first spectrogram
         plot_mel_spectrogram(mel_spectrogram, title=f"Mel Spectrogram - Batch {i}")
         
-        # Stop after visualizing the first batch (optional)
-        if i == 0:
-            break
+    
 
