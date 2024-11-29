@@ -14,9 +14,9 @@ encoder_config = {
     'n_mel_bins': 80,
     'emb_dim':256,
     'n_time_frames': 800 ,
-    'n_attention_heads': 4,
+    'n_attention_heads': 8,
     'hidden_dim': 64,
-    'n_blocks': 8
+    'n_blocks': 16
     }
 
 decoder_config = {
@@ -26,7 +26,7 @@ decoder_config = {
     'num_heads': 4,
     'hidden_dim': 64,
     'mlp_dim': 128,
-    'n_blocks': 8,
+    'n_blocks': 16,
     'voc_size': 50264  # Vocabulary size from tokenizer
 }
 
