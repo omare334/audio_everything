@@ -126,19 +126,20 @@ def plot_mel_spectrogram(mel_spectrogram, title="Mel Spectrogram"):
     plt.tight_layout()
     plt.show()
 
-# Example usage
-batch_size = 64
-num_batches_to_test = 5  # Specify the number of batches to test
-batch_count = 0  # Counter to track the number of processed batches
+if __name__ == "__main__":
+    # Example usage
+    batch_size = 64
+    num_batches_to_test = 5  # Specify the number of batches to test
+    batch_count = 0  # Counter to track the number of processed batches
 
-for batch in data_loader(dataset, batch_size=batch_size):
-    print(f"Batch {batch_count + 1}:")
-    print("Audio shape:", batch["audio"].shape)
-    print("Input IDs shape:", batch["input_ids"].shape)
-    print("Target IDs shape:", batch["target_ids"].shape)
-    print("-" * 50)  # Separator for readability
-    
-    batch_count += 1
-    if batch_count == num_batches_to_test:
-        break  # Stop after processing the specified number of batches
+    for batch in data_loader(dataset, batch_size=batch_size):
+        print(f"Batch {batch_count + 1}:")
+        print("Audio shape:", batch["audio"].shape)
+        print("Input IDs shape:", batch["input_ids"].shape)
+        print("Target IDs shape:", batch["target_ids"].shape)
+        print("-" * 50)  # Separator for readability
+        
+        batch_count += 1
+        if batch_count == num_batches_to_test:
+            break  # Stop after processing the specified number of batches
 
