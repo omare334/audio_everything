@@ -4,7 +4,7 @@ from torch.optim import Adam
 from transformers import GPT2Tokenizer
 from tqdm import tqdm  # For progress bars
 from transformer import Transformer
-from data_loader_test import data_loader
+from data_loader_hugface import data_loader
 import pandas as pd 
 import wandb
 
