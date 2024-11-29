@@ -137,7 +137,7 @@ if __name__ == "__main__":
     batch_size = 64
     
     # Get batch 1278
-    batch_index = 1278
+    batch_index = 1220
 
     
     try:

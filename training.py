@@ -16,7 +16,7 @@ encoder_config = {
     'n_time_frames': 800 ,
     'n_attention_heads': 8,
     'hidden_dim': 64,
-    'n_blocks': 16
+    'n_blocks': 12
     }
 
 decoder_config = {
@@ -26,7 +26,7 @@ decoder_config = {
     'num_heads': 4,
     'hidden_dim': 64,
     'mlp_dim': 128,
-    'n_blocks': 16,
+    'n_blocks': 12,
     'voc_size': 50264  # Vocabulary size from tokenizer
 }
 
@@ -53,6 +53,7 @@ num_epochs = 10
 data_path = "training_concatenated.csv"
 # r"J:\common_voice\common\cv-corpus-19.0-2024-09-13\en\train.tsv"
 data = pd.read_csv(data_path)
+data = data[:500000]
 
 # Create the data loader
 batch_size = encoder_config["batch_size"]
@@ -67,7 +68,6 @@ from tqdm import tqdm
 
 # Start the W&B run
 wandb.init(project="your_project_name", entity="your_entity")
-
 try:
     # Training loop
     for epoch in range(num_epochs):
@@ -119,6 +119,9 @@ try:
         epoch_avg_loss = epoch_loss / num_batches  # Average loss for the entire epoch
         wandb.log({"epoch_loss": epoch_avg_loss, "epoch": epoch + 1})
         print(f"Epoch {epoch + 1} Loss: {epoch_avg_loss}")
+        
+        # Save the model after each epoch
+        torch.save(model.state_dict(), f"transformer_model_epoch_{epoch + 1}.pt")
 
 except KeyboardInterrupt:
     print("Training interrupted. Saving model...")
@@ -132,6 +135,7 @@ finally:
     wandb.finish()
 
     # Save the trained model at the end or after any interruption
-    torch.save(model.state_dict(), "transformer_model_500.pt")
+    torch.save(model.state_dict(), "transformer_model_final.pt")
+
 
 

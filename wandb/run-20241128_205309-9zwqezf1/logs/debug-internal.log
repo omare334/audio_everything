@@ -6,3 +6,17 @@
 {"time":"2024-11-28T20:53:09.9310206Z","level":"INFO","msg":"sender: started","stream_id":"9zwqezf1"}
 {"time":"2024-11-28T20:53:09.9310206Z","level":"INFO","msg":"writer: Do: started","stream_id":"9zwqezf1"}
 {"time":"2024-11-28T20:53:10.198151Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-28T23:48:21.6681255Z","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/omareweis123/audio-to-text-transformer/9zwqezf1/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2024-11-28T23:48:24.4917351Z","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.1.112:61651->35.186.228.49:443: wsarecv: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"time":"2024-11-28T23:51:53.1402189Z","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/omareweis123/audio-to-text-transformer/9zwqezf1/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2024-11-28T23:51:55.0067131Z","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.1.112:62307->35.186.228.49:443: wsarecv: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"time":"2024-11-29T03:29:44.6456546Z","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/omareweis123/audio-to-text-transformer/9zwqezf1/file_stream"}
+{"time":"2024-11-29T05:48:18.5435479Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-29T05:48:18.5451708Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-29T05:48:19.5443241Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.7593754},{"desc":"uploading config.yaml","runtime_seconds":0.5964322,"progress":"652B/652B"}],"total_operations":2}}
+{"time":"2024-11-29T05:48:21.1403587Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-29T05:48:22.3415795Z","level":"INFO","msg":"stream: closing","id":"9zwqezf1"}
+{"time":"2024-11-29T05:48:22.3415795Z","level":"INFO","msg":"handler: closed","stream_id":"9zwqezf1"}
+{"time":"2024-11-29T05:48:22.3415795Z","level":"INFO","msg":"writer: Close: closed","stream_id":"9zwqezf1"}
+{"time":"2024-11-29T05:48:22.3415795Z","level":"INFO","msg":"sender: closed","stream_id":"9zwqezf1"}
+{"time":"2024-11-29T05:48:22.3415795Z","level":"INFO","msg":"stream: closed","id":"9zwqezf1"}

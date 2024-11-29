@@ -2,4 +2,6 @@ c:\Users\omare\Desktop\mlx projects\audio_everything\training.py:55: DtypeWarnin
   data = pd.read_csv(data_path)
 Epoch 1/10:   0%|                                                                                       | 0/17440 [00:00<?, ?batch/s]c:\Users\omare\AppData\Local\Programs\Python\Python312\Lib\site-packages\transformers\tokenization_utils_base.py:2852: UserWarning: `max_length` is ignored when `padding`=`True` and there is no truncation strategy. To pad to max length, use `padding='max_length'`.
   warnings.warn(
-Epoch 1/10:   9%|█████▋                                                        | 1603/17440 [59:41<10:01:21,  2.28s/batch, loss=5.25]
+Epoch 1/10: 17441batch [8:04:25,  1.67s/batch, loss=2.42]                                                                            
+Epoch 1 Loss: 4.462082854699378
+Epoch 2/10:   7%|██████                                                                                | 1220/17440 [50:37<11:13:04,  2.49s/batch, loss=3.23]

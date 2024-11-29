@@ -37,3 +37,10 @@ config: {}
 2024-11-28 20:53:15,729 INFO    MainThread:26528 [wandb_init.py:init():626] wandb.init called with sweep_config: {}
 config: {}
 2024-11-28 20:53:15,729 INFO    MainThread:26528 [wandb_init.py:init():664] wandb.init() called when a run is still active
+2024-11-29 05:48:18,541 INFO    MainThread:26528 [wandb_run.py:_finish():2155] finishing run omareweis123/audio-to-text-transformer/9zwqezf1
+2024-11-29 05:48:18,542 INFO    MainThread:26528 [wandb_run.py:_atexit_cleanup():2420] got exitcode: 0
+2024-11-29 05:48:18,542 INFO    MainThread:26528 [wandb_run.py:_restore():2402] restore
+2024-11-29 05:48:18,542 INFO    MainThread:26528 [wandb_run.py:_restore():2408] restore done
+2024-11-29 05:48:22,321 INFO    MainThread:26528 [wandb_run.py:_footer_history_summary_info():3960] rendering history
+2024-11-29 05:48:22,322 INFO    MainThread:26528 [wandb_run.py:_footer_history_summary_info():3992] rendering summary
+2024-11-29 05:48:22,340 INFO    MainThread:26528 [wandb_run.py:_footer_sync_info():3921] logging synced files

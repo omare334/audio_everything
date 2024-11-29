@@ -1,0 +1,6 @@
+c:\Users\omare\Desktop\mlx projects\audio_everything\training.py:55: DtypeWarning: Columns (5) have mixed types. Specify dtype option on import or set low_memory=False.
+  data = pd.read_csv(data_path)
+Backend tkagg is interactive backend. Turning interactive mode on.
+Epoch 1/10:   0%|                                                                                        | 0/7812 [00:00<?, ?batch/s]c:\Users\omare\AppData\Local\Programs\Python\Python312\Lib\site-packages\transformers\tokenization_utils_base.py:2852: UserWarning: `max_length` is ignored when `padding`=`True` and there is no truncation strategy. To pad to max length, use `padding='max_length'`.
+  warnings.warn(
+Epoch 1/10:   0%|                                                                   | 7/7812 [00:28<8:16:03,  3.81s/batch, loss=9.15]
