@@ -62,7 +62,7 @@ decoder_config = {
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model = Transformer(encoder_config,decoder_config).to(device)
-model.load_state_dict(torch.load("transformer_model_epoch_1.pt", map_location=device))
+model.load_state_dict(torch.load("transformer_model_epoch_4.pt", map_location=device))
 
 def run_inference(dataset, max_transcriptions=None, batch_size=64):
     """
@@ -89,7 +89,7 @@ def run_inference(dataset, max_transcriptions=None, batch_size=64):
 
             # Extract audio and true input IDs
             audio = batch["audio"].to(device)
-            true_input_ids = batch["input_ids"]
+            true_input_ids = batch["input_ids"].to(device)
 
             # Perform inference
             outputs = model(audio,true_input_ids)  # Forward pass with the model in eval mode
@@ -120,9 +120,9 @@ def run_inference(dataset, max_transcriptions=None, batch_size=64):
 
 
 # Example usage
-audio_file = load_dataset("mozilla-foundation/common_voice_17_0", "en", split="train", streaming=True)  # Replace with the path to your audio file
+audio_file = load_dataset("mozilla-foundation/common_voice_17_0", "en", split="train", streaming=True,trust_remote_code=True)  # Replace with the path to your audio file
 # Example dataset
-max_transcriptions = 1000
+max_transcriptions = 64
 results = run_inference(audio_file, max_transcriptions=max_transcriptions, batch_size=64)
 
 print(f"Total transcriptions: {len(results)}")
@@ -130,7 +130,4 @@ for i, result in enumerate(results[:10]):  # Print the first 10 for verification
     print(f"Result {i + 1}:")
     print(f"  Predicted: {result['predicted']}")
     print(f"  True:      {result['true']}")
-
-
-
 
